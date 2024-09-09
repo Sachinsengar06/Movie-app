@@ -1,0 +1,200 @@
+:root {
+    --btn-color:#f7c600;
+    --white: #ffffff;
+  }
+.main_container{
+    box-sizing: border-box;
+    min-height: 500vh;
+    display: grid;
+    grid-template-rows: 100vh 50vh 100vh 110vh;  /* First and third rows take 100% of the viewport height, second and fourth take 50% */
+    grid-template-columns: 1fr; /* Single column layout */
+    position: relative;
+}
+.header{
+position: absolute;
+top:10px;
+z-index: 1;
+width: 100%;
+}
+
+.row1_img_div{
+    width: 100%;
+   height: 100vh;
+   position: relative;
+   background-image: 
+     linear-gradient(to right, black, rgba(206, 206, 238, 0.5)), /* Semi-transparent gradient */
+     url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfh9XAuL5NUJk1L1OcmaWGsg617WZipHxpUNHQ6TquYdQ_Bxv3517u3xTIszyQpobpoGzo5JuW6gVyosVWWkDs4vGr_T2HSRw1FzHdud1R7TLc3wxaU02fp9rSADyMqPIT5lq7A2lqdCbo/s1920/movie.jpg'); /* Your image URL */
+   background-size: cover; /* Ensures the image covers the container */
+   background-position: center;
+   background-repeat: no-repeat;
+}
+.row1_content_div{
+    position: absolute;
+    bottom: 18%;
+    left: 5%;
+}
+.row1_content_div>p, h1{
+    color: white;
+    margin-bottom: 25px;
+}
+.row1_content_div>h1{
+    font-size: 50px;
+}
+.row1_content_div>p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.btn{
+    background-color:var(--btn-color);
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border-radius: 35px;
+    color:white;
+    font-weight: 700;
+    font-size: large;
+}
+
+/* __________________________________________________________________________ */
+
+.row2{
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 15px;
+    padding-left: 80px;
+    padding-right: 80px;
+   
+}
+.row2_content{
+    display: grid;
+    row-gap: 15px;
+}
+.icon{
+    font-size: 55px;
+}
+.row3{
+    background-color: #7516f2;
+    display: grid;
+    grid-template-columns:1fr 2fr;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.row3>*{
+    color: white;
+}
+.row3_left_area>h1{
+    font-size: 40px;
+}
+.row3_left_area>p{
+    font-weight: 300px;
+    margin-bottom: 30px;
+}
+.row3_right_area{
+    display:flex;
+    justify-content:end;
+}
+.row3_right_area>img{
+    width: 75%;
+    height: 75%;
+    
+}
+.row4{
+    background-color: rgba(0,0,0,.1);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+}
+.row4>*{
+    justify-self: center;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.circle{
+    background-color: #7516f2;
+    border-radius: 50%;
+    width: 35vw;
+    height: 78vh;
+    position: relative;
+}
+.row4_img_div{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.row4_img_div>img{
+    height: 85vh;
+    width: 21vw;
+}
+.row4_right_area>h1{
+    font-size: 35px;
+    color:black
+}
+.row4_right_area>p{
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.row5{
+   padding-top: 40px;
+   padding-bottom: 40px;
+   padding-left: 55px;
+   padding-right: 55px;
+   /* background-color: black; */
+}
+.row5_inner_area{
+    background-image:linear-gradient(to top left, rgba(255,0,0,.3), rgba(255, 153, 150, 0), rgba(255, 0, 255,.6),rgba(255, 255, 0,1)),
+    linear-gradient(to top right,white , rgba(255, 153, 150, 0), rgba(255, 0, 255,.6)),
+    url('https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-position: center;
+    background-size: cover;
+    position:relative;  
+    height: 100%;
+    border-radius: 20px;
+}
+.row5_content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position:absolute;
+    top:15%;
+    left: 4%;
+    padding-right: 45px;
+    row-gap: 70px;
+}
+.item1>h1{
+    font-size: 45px;
+}
+.item1>p{
+    font-size: 15px;
+    font-weight: 400;
+    color:white;
+    margin-bottom: 30px;
+}
+.item2{
+    grid-area: 2/1/2/3;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 10px;
+}
+.item2>div>img{
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,.3);
+   
+   
+}
+.tile_img{
+    border-radius: 15px;
+}
+
+
+
+
+
