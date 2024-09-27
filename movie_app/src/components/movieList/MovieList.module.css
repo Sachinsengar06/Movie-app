@@ -1,0 +1,21 @@
+.list{
+    color: white;
+    overflow: hidden; /* Prevent y-axis scroll */
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.list_div{
+    margin-top: 25px;
+    display: flex;
+    scroll-behavior: smooth;
+    gap: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    
+}
+.list_div *{
+    height: 220px;
+    width: 150px;
+    flex-shrink: 0;
+}

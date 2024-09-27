@@ -10,8 +10,13 @@ import lordRings from "../../assets/dashboardtiles/Ringstrilogyposter.webp";
 import harrypotter from "../../assets/dashboardtiles/harry-potter-and-the-sorcerers-stone-title-card.png";
 import sherlockHolmes from '../../assets/dashboardtiles/sherlock-holmes.avif'
 import capAmerica from '../../assets/dashboardtiles/captainAmerica.jpg'
+import Button from "../../components/button/Button";
+import { useNavigate } from "react-router-dom";
 const DashBoard = () => {
- 
+  const navigate = useNavigate();
+  const navToHomePage = () => {
+    navigate('/home')
+  }
   return (
     <div className={styles.main_container}>
       <div className={styles.header}>
@@ -29,7 +34,7 @@ const DashBoard = () => {
               The search is over! Let Watch More help you find perfect <br />
               movie to watch tonight for free
             </p>
-            <button className={styles.btn}>Watch Free</button>
+            <Button fun={navToHomePage} textColor = {'white'} backgroundColor = {'#f7c600'} title = {'Watch Free'}/>
           </div>
         </div>
       </div>
@@ -84,7 +89,7 @@ const DashBoard = () => {
             faster, and get curated recommendations—all without ever leaving
             Plex. Connect with friends to see who’s watching what, where.
           </p>
-          <button className={styles.btn}>Discover More Now</button>
+          <Button fun={navToHomePage} textColor = {'white'} backgroundColor = {'#f7c600'} title = {'Discover More Now'}/>
         </div>
         <div className={styles.row3_right_area}>
           <img src={Row3_img} alt="" />
@@ -106,7 +111,7 @@ const DashBoard = () => {
             what device you choose, your free movies will pick up where you left
             off with ease.
           </p>
-          <button className={styles.btn}>Watch Free</button>
+          <Button fun={navToHomePage} textColor = {'white'} backgroundColor = {'#f7c600'} title={'Watch Free'} />
         </div>
       </div>
       <div className={`${styles.row5} ${styles.row}`}>
@@ -119,10 +124,9 @@ const DashBoard = () => {
                 hundreds available worldwide, your inner coach potato will
                 rejoice.
               </p>
-              <button className={styles.btn}>See What's On Now</button>
+              <Button fun={navToHomePage} textColor = {'white'} backgroundColor = {'#f7c600'} title = {"See What's On Now"}/>
             </div>
             
-
             <div className={styles.item2}>
             <div><img className={styles.tile_img} src={lordRings} alt="" /></div>
             <div><img className={styles.tile_img} src={harrypotter} alt="" /></div>
@@ -133,7 +137,6 @@ const DashBoard = () => {
           </div>
         </div>
       </div>
-      {/* <div className={`${styles.row6} ${styles.row}`}>row6</div> */} 
     </div>
   );
 };

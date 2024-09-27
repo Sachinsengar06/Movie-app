@@ -1,0 +1,23 @@
+.container{
+    height: 70vh;
+    overflow: auto;
+    background-color: white;
+    border-radius: 5px;
+}
+.search_list{
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  align-items: center;
+  padding:6px;
+}
+
+.movie_tile {
+    flex-shrink: 0;
+    height: 70px;
+    width: 50px;
+  }
+  .movie_title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

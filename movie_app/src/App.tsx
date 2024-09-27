@@ -1,12 +1,13 @@
-import DashBoard from "./pages/dashBoard/DashBoard"
-import HomePage from "./pages/homePage/HomePage"
+import ContextProvider from "./context/ContextProvider";
+import Navigation from "./navigation/Navigation";
 
 const App = () => {
   return (
     <div>
-      <HomePage/>
+      <ContextProvider>
+        <Navigation />
+      </ContextProvider>
     </div>
-  )
-}
-
-export default App
+  );
+};
+export default App;

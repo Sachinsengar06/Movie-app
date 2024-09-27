@@ -1,17 +1,13 @@
+import { useNavigate } from "react-router-dom";
+import SearchBar from "../searchBar/SearchBar";
 import styles from "./DashBoardHeader.module.css";
-import { IoIosSearch } from "react-icons/io";
-
 const DashBoardHeader = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.header_container}>
       <div className={styles.col1}>
         <p>MovieX</p>
-        <div className={styles.search_div}>
-          <div className={styles.icon}>
-            <IoIosSearch />
-          </div>
-          <input type="text" placeholder="Find Movies & Tv" />
-        </div>
+        <SearchBar width={'350px'}/>
       </div>
 
       <div className={styles.col2}>
@@ -23,7 +19,7 @@ const DashBoardHeader = () => {
 
       <div className={styles.col3}>
         <h5>sign In</h5>
-        <button>Sign Up</button>
+        <button className={styles.btn} onClick={()=>navigate('/login')}>Sign Up</button>
       </div>
     </div>
   );

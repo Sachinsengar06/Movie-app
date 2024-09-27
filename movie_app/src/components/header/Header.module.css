@@ -1,0 +1,187 @@
+.container {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    background-color: #161616;
+    gap: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.col1 {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    gap: 30px;
+}
+
+.col1 > p {
+    color: orange;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.col2 {
+    display: flex;
+    flex: 3;
+    align-items: center;
+    gap: 16px;
+}
+
+.col2 > div {
+    cursor: pointer;
+    padding: 5px 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+}
+
+.col2 > div:hover {
+    background-color: white;
+    color: black;
+    border-radius: 18px;
+}
+
+.col2 > div * {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.col3 {
+    flex: 1;
+    align-self: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bookmarkIcon {
+    padding: 8px 10px 6px;
+    color: white;
+}
+
+.bookmarkIcon:hover {
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    color: black;
+}
+
+.bookmarkIcon * {
+    font-size: 18px;
+}
+
+/* Media Queries */
+
+/* Large screens (desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+    .container {
+        gap: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .col1 > p {
+        font-size: 30px;
+    }
+    
+    .col2 {
+        gap: 12px;
+    }
+   
+    
+    
+}
+
+/* Medium screens (tablets) and Small screens (mobile phones) */
+@media only screen and (max-width: 992px) {
+    body {
+        padding-bottom: 60px; /* Add padding to body to account for footer height */
+    }
+
+    .container {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 10px;
+        position: fixed; 
+    }
+    
+    .col1, .col3 {
+        width: 50%;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .col3 {
+        justify-content: flex-end;
+    }
+    
+    .col2 {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #161616;
+        justify-content: space-around;
+        padding: 8px 0;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .col2 div{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .col2 > div * {
+        font-size: 25px;
+    }
+    .col2 .icon_text{
+       display: none;
+    }
+    
+}
+
+/* Small screens (mobile phones, 767px and down) */
+@media only screen and (max-width: 767px) {
+    .col1 > p {
+        font-size: 24px;
+    }
+    
+    .col2 > div {
+        padding: 3px 4px;
+    }
+    
+    .col2 > div * {
+        font-size: 23px;
+    }
+    .icon_text{
+       display: none;
+    }
+    
+    .bookmarkIcon * {
+        font-size: 16px;
+    }
+}
+
+/* Extra small screens */
+@media only screen and (max-width: 480px) {
+    .col1 > p {
+        font-size: 20px;
+    }
+    
+    .col2 {
+        gap: 8px;
+    }
+    
+    .col2 > div * {
+        font-size: 21px;
+    }
+    .icon_text{
+       display: none;
+    }
+}
