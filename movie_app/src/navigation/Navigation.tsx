@@ -7,6 +7,8 @@ import Discover from '../pages/discover/Discover'
 import Login from '../pages/login/Login'
 import BookMarkedItems from '../pages/bookMarkedItems/BookMarkedItems'
 import Video from '../components/videoComponent/Video'
+import MoviePage from '../components/moviePage/MoviePage'
+import Categories from '../pages/categories/Categories'
 const Navigation = () => {
 
   return (
@@ -20,6 +22,8 @@ const Navigation = () => {
                 <Route path = '/discover' element={<LayoutWithHeader><Discover/></LayoutWithHeader>}/>
                 <Route path='/bookmarked' element={<LayoutWithHeader><BookMarkedItems/></LayoutWithHeader>}/>
                 <Route path='/video/:movieId' element={<Video/>}/>
+                <Route path ='/moviepage' element={<LayoutWithHeader><MoviePage newApi={''} /></LayoutWithHeader>}/>
+                <Route path = '/Categories' element = {<LayoutWithHeader><Categories/></LayoutWithHeader>}/>
             </Routes>
         </Router>
       

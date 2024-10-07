@@ -1,80 +1,149 @@
-.container{
+.container {
     position: relative;
-}
-.img_div{
-    width: 100%;
+    display: flex;
     height: 100vh;
-    overflow: hidden;
-    
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Fallback for smaller screens */
 }
-.img_div img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position:relative;
+
+.img_div {
+    display: none; /* Hide by default for smaller screens */
 }
-.darkEffect{
-    background-color: rgba(0, 0, 0, .2);
-    position:absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+
+.darkEffect {
+    display: none; /* Hide by default for smaller screens */
 }
-.login_form{
-    position:absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    
+
+.login_form {
     background-color: rgba(0,0,0,.8);
-    padding:50px;
-    width: 450px;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 8px;
 }
-.content{
+
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.content input{
-    padding:8px;
+
+.content input {
+    padding: 8px 12px;
     font-size: 15px;
-    background-color: black;
+    background-color: #333;
     color: white;
-    border: whitesmoke 1px solid;
+    border: 1px solid #555;
     border-radius: 5px;
-    height: 60px;
+    height: 50px;
     width: 100%;
     margin-bottom: 18px;
-    
 }
-.content input:focus{
+
+.content input:focus {
     outline: 2px solid white;
     outline-offset: 2px;
 }
-.btn{
+
+.btn {
     width: 100%;
-    background-color: red;
-    height: 40px;
+    background-color: #e50914;
+    height: 50px;
     border: none;
     border-radius: 5px;
-    color:white;
+    color: white;
     font-size: 16px;
     font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-.forgotPass{
-    color:white;
-    font-size: 16px;
+
+.btn:hover {
+    background-color: #f40612;
+}
+
+.forgotPass {
+    color: white;
+    font-size: 14px;
     font-weight: 600;
     margin-top: 15px;
+    text-align: center;
 }
-.register p{
-    color:rgb(230, 228, 228)
+
+.register {
+    margin-top: 20px;
+    text-align: center;
 }
-.register b{
-    color:white;
+
+.register p {
+    color: rgb(230, 228, 228);
+    font-size: 14px;
 }
-.register b:hover{
-    text-decoration:underline;
+
+.register b {
+    color: white;
+    cursor: pointer;
+}
+
+.register b:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for larger screens */
+@media (min-width: 768px) {
+    .container {
+        background-color: transparent;
+    }
+
+    .img_div {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+
+    .img_div img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .darkEffect {
+        display: block;
+        background-color: rgba(0, 0, 0, .4);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    .login_form {
+        padding: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .login_form {
+        padding: 50px;
+    }
+
+    .content input {
+        height: 60px;
+    }
+
+    .btn {
+        height: 60px;
+    }
+
+    .forgotPass, .register p {
+        font-size: 16px;
+    }
 }

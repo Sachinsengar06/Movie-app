@@ -1,21 +1,52 @@
-.list{
+.list {
     color: white;
-    overflow: hidden; /* Prevent y-axis scroll */
+    overflow: hidden;
     padding-left: 30px;
     padding-right: 30px;
 }
-.list_div{
+
+.list_div {
     margin-top: 25px;
+    height: 220px;
     display: flex;
     scroll-behavior: smooth;
     gap: 20px;
-    overflow-x: auto; /* Allow horizontal scrolling */
-    overflow-y: hidden; /* Prevent vertical scrolling */
+    overflow-x: auto;
+    overflow-y: hidden;
     scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+     /* Space for potential scrollbar */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.list_div::-webkit-scrollbar {
+    display: none;
     
 }
 .list_div *{
     height: 220px;
     width: 150px;
     flex-shrink: 0;
+}
+/* Ensure items don't shrink*/
+
+
+/* Optional: Adjust MovieCard style if needed */
+/* .movie_card {
+    width: 100%;
+    height: auto;
+} */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .list {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .list_div * {
+        height: 200px;
+        width: 130px;
+        flex-shrink: 0;
+    }
 }

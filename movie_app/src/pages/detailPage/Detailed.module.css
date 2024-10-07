@@ -1,70 +1,123 @@
-.container{
+.container {
     display: grid;
-    height: 200vh;
-    grid-template-rows: 90vh ;
+    min-height: 100vh;
+    grid-template-rows: auto;
     background-color: black;
+   
 }
-.row1{
+
+.row1 {
     padding-top: 35px;
     display: flex;
-   
+    flex-direction: column;
+}
 
-}
-.col1{
-    flex:3;
+.col1 {
+    flex: 1;
     text-align: center;
-    
 }
-.bkImg{
-    position: relative;    
+
+.bkImg {
+    position: relative;
 }
-.bkImg img{
+
+.bkImg img {
     width: 100%;
+    max-width: 100%;
     padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
 }
-.imgOverlay{
+
+.imgOverlay {
     position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to top, rgb(0, 0, 0) 0%, transparent 30%), 
-              linear-gradient(to bottom, rgb(0, 0, 0) 0%, transparent 30%);
-  pointer-events: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgb(0, 0, 0) 0%, transparent 30%),
+                linear-gradient(to bottom, rgb(0, 0, 0) 0%, transparent 30%);
+    pointer-events: none;
 }
-.col2{
-    flex:2;
+
+.col2 {
+    flex: 1;
     background-position: center;
     background-size: cover;
-    position:relative;  
-    height: 60%;
+    position: relative;
+    height: auto;
     border-radius: 20px;
-    color:white;
+    color: white;
+    padding: 20px;
 }
-.title{
-    font-size: 35px;
+
+.title {
+    font-size: 28px;
     font-weight: 700;
 }
-.director_name{
+
+.director_name {
     font-size: 12px;
 }
-.detail{
-    color:#FFFFFF99;
+
+.detail {
+    color: #FFFFFF99;
     margin-bottom: 7px;
 }
-.buttons{
-    margin-top: 35px;
-    margin-bottom: 35px;
+
+.buttons {
+    margin-top: 25px;
+    margin-bottom: 25px;
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-.release_date{
+
+.release_date {
     font-size: 14px;
 }
+
 .rating {
-  display: flex;
-   gap: 20px;
-   color:#FFFFFF99;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #FFFFFF99;
+}
+
+@media (min-width: 768px) {
+    .row1 {
+        flex-direction: row;
+    }
+
+    .col1 {
+        flex: 3;
+    }
+
+    .col2 {
+        flex: 2;
+    }
+
+    .bkImg img {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .title {
+        font-size: 35px;
+    }
+
+    .buttons {
+        margin-top: 35px;
+        margin-bottom: 35px;
+        gap: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        height: 200vh;
+        grid-template-rows: 90vh;
+    }
+
+    .col2 {
+        height: 60%;
+    }
 }

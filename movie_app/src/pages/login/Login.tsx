@@ -1,14 +1,18 @@
+import { useMediaQuery } from "react-responsive";
 import styles from "./Login.module.css";
+
+
 const Login = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 992px)" })
   return (
     <div className={styles.container}>
-      <div className={styles.img_div}>
+      {!isMobile&&<div className={styles.img_div}>
         <img
           src="https://i.pinimg.com/1200x/61/6d/24/616d2453e4e2c6b1ad51197a2f00b8c4.jpg"
           alt=""
         />
         <div className={styles.darkEffect}></div>
-      </div>
+      </div>}
       <div className={styles.login_form}>
         <h1>Sign In</h1>
         <div className={styles.content}>

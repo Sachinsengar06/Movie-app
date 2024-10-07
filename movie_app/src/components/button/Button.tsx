@@ -2,7 +2,7 @@ import styles from "./Button.module.css";
 import { IconType } from "react-icons";
 
 interface ButtonProps {
-  title: string;
+  title?: string;
   backgroundColor: string;
   textColor: string;
   icon?: IconType;

@@ -1,45 +1,46 @@
-import { useState } from 'react';
-import styles from './MovieCard.module.css';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Skeleton from 'react-loading-skeleton';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import styles from './MovieCard.module.css';
 
 interface MovieCardProps {
   imgUrl: string;
   movieId: number;
-  skeletonHeight?: string; // Add optional props for skeleton dimensions
-  skeletonWidth?: string;
+  loading: boolean;
 }
 
-const MovieCard = ({ imgUrl, movieId, skeletonHeight = '100%', skeletonWidth = '100%' }: MovieCardProps) => {
-  const [isLoading, setIsLoading] = useState(false);
+const MovieCard: React.FC<MovieCardProps> = ({ imgUrl, movieId, loading }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
   const navigate = useNavigate();
 
-  // Navigate to the detail page
+  useEffect(() => {
+    if (!loading) {
+      const img = new Image();
+      img.src = imgUrl;
+      img.onload = () => setImageLoaded(true);
+    }
+  }, [loading, imgUrl]);
+
   const handleClick = () => {
     navigate(`/detail/${movieId}`);
   };
 
-  // Handle image load event
-  const handleImageLoad = () => {
-    setIsLoading(false);
-  };
-
   return (
     <div className={styles.container} onClick={handleClick}>
-      {/* Display skeleton loader while the image is loading */}
-      {isLoading ? (
-        <Skeleton 
-          height={skeletonHeight}
-          width={skeletonWidth}
-          style={{ padding: '2px', borderRadius: '11px' }} 
-        />
-      ) : (
+      {(loading || !imageLoaded) && (
+        <div className={styles.skeletonWrapper}>
+          <SkeletonTheme baseColor="#202020"  highlightColor="#444" >
+          <Skeleton className={styles.skeleton} />
+          </SkeletonTheme>
+        </div>
+      )}
+      {!loading && (
         <img
           src={imgUrl}
           alt="Movie Thumbnail"
-          onLoad={handleImageLoad}
-          style={{ display: isLoading ? 'none' : 'block' }}
+          onLoad={() => setImageLoaded(true)}
+          style={{ display: imageLoaded ? 'block' : 'none' }}
           className={styles.imgCard}
         />
       )}

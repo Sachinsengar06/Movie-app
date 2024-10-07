@@ -1,45 +1,122 @@
-.search_div{
+.search_div {
     height: 30px;
-    background-color: rgba(255,255,255,.1);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     display: flex;
-    justify-content:end;
+    justify-content: end;
     align-items: center;
     position: relative;
-}
-.searchList{
+    width: 100%; /* Make it responsive to container width */
+  }
+  
+  .searchList {
     position: absolute;
-    top:35px;
-}
-.search_div>input{
+    top: 35px;
+    width: 100%; /* Full width for the suggestion list */
+  }
+  
+  .search_div > input {
     border-top-right-radius: 20px;
-    background-color: rgba(0,0,0,.1);
     border-bottom-right-radius: 20px;
-    border:none;
+    border: none;
     width: 90%;
     height: inherit;
     padding-left: 5px;
     outline: none;
-    color:white;
-}
-.search_div>input::placeholder{
-    color:rgb(234, 233, 233)
-}
-.icon{
-    color:white;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+  }
+  
+  .search_div > input::placeholder {
+    color: rgb(234, 233, 233);
+  }
+  
+  .icon {
+    color: white;
     font-size: 20px;
     display: flex;
     justify-content: center;
-}
-.search_div:focus-within{
+    padding-right: 10px; /* Add some space between the icon and input */
+  }
+  
+  .search_div:focus-within {
     background-color: white;
-    color:black;
-}
-
-.search_div:focus-within> .icon{
-    color:black;
-}
-.search_div>input:focus{
+    color: black;
+  }
+  
+  .search_div:focus-within > .icon {
+    color: black;
+  }
+  
+  .search_div > input:focus {
     background-color: white;
-    color:black;
-}
+    color: black;
+  }
+  
+  /* Responsive Styles */
+  /* Medium screens: Tablets and small desktops */
+  @media (max-width: 1024px) {
+    .search_div {
+      height: 28px; /* Slightly reduce height */
+      border-radius: 15px;
+    }
+  
+    .search_div > input {
+      font-size: 14px; /* Adjust font size */
+      padding-left: 4px;
+    }
+  
+    .icon {
+      font-size: 18px;
+      padding-right: 8px;
+    }
+  
+    .searchList {
+      top: 30px; /* Adjust the position of the search list */
+    }
+  }
+  
+  /* Small screens: Phones and small tablets */
+  @media (max-width: 768px) {
+    .search_div {
+      height: 26px;
+      border-radius: 12px;
+    }
+  
+    .search_div > input {
+      font-size: 12px;
+      width: 80%; /* Reduce width on small screens */
+    }
+  
+    .icon {
+      font-size: 16px;
+      padding-right: 6px;
+    }
+  
+    .searchList {
+      top: 25px;
+    }
+  }
+  
+  /* Extra small screens: Small phones */
+  @media (max-width: 480px) {
+    .search_div {
+      height: 24px; /* Further reduce height */
+      border-radius: 10px;
+    }
+  
+    .search_div > input {
+      font-size: 10px; /* Smaller font size for mobile */
+      width: 70%; /* Reduce input width further */
+    }
+  
+    .icon {
+      font-size: 14px;
+      padding-right: 4px;
+    }
+  
+    .searchList {
+      top: 20px; /* Adjust list position for smaller height */
+    }
+  }
+  

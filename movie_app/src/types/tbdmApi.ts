@@ -65,3 +65,12 @@ export interface MovieDetailApiResponse {
     iso_639_1: string;
     name: string;
   }
+
+export interface VideoResponseAPI {
+  id:number;
+  results:videoItem[]
+}
+interface videoItem {
+  key:string;
+  type:string;
+}

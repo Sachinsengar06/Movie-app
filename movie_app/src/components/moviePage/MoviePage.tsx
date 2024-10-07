@@ -12,21 +12,27 @@ interface MoviePageProps {
 const baseImgUrl = 'https://image.tmdb.org/t/p/w500';
 
 const MoviePage = ({ newApi }: MoviePageProps) => {
-  const { data:data } = useFetchData(newApi);
-
+  const { data, loading } = useFetchData<MovieApiResponse>(newApi);
   return (
     <div className={styles.home_grid}>
-      {(data as MovieApiResponse)?.results.map((item, index: number) => (
-        <MovieCard
-          key={index}
-          movieId={item.id}
-          imgUrl={baseImgUrl + `${item.poster_path}`}
-          skeletonHeight="300px" // Pass the desired height for the skeleton
-          skeletonWidth="100%"  // Adjust width as needed for grid context
-        />
-      ))}
+      {loading
+        ? Array.from({ length: 20 }).map((_, index) => (
+            <MovieCard
+              key={index}
+              imgUrl=""
+              movieId={0}
+              loading={true}
+            />
+          ))
+        : data?.results.map((item, index: number) => (
+            <MovieCard
+              key={index}
+              movieId={item.id}
+              imgUrl={baseImgUrl + `${item.poster_path}`}
+              loading={false}
+            />
+          ))}
     </div>
   );
 };
-
 export default MoviePage;

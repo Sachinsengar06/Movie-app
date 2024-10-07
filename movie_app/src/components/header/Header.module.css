@@ -81,9 +81,9 @@
 /* Large screens (desktops, 1200px and up) */
 @media only screen and (max-width: 1200px) {
     .container {
-        gap: 15px;
+        gap: 13px;
         padding-left: 20px;
-        padding-right: 20px;
+        padding-right: 15px;
     }
     
     .col1 > p {
@@ -175,7 +175,7 @@
     }
     
     .col2 {
-        gap: 8px;
+        gap: 6px;
     }
     
     .col2 > div * {

@@ -1,7 +1,7 @@
 .container{
     background-color: black;
-    height: 200vh;
     padding-top: 10px;
+    padding-bottom: 50px;
 }
 .row1{
     color: white;
@@ -18,8 +18,10 @@
     overflow-y: hidden; /* Prevent vertical scrolling */
     width: 100%;
     scrollbar-width: none; /* Hide scrollbar in Firefox */
-    
+    height: 220px;
+    flex-shrink: 0;
 }
+
 .row1_div *{
     height: 220px;
     width: 150px;
@@ -48,5 +50,9 @@
 .row2_div *{
     height: 130px;
     width: 230px;
+    flex-shrink: 0;
+}
+.row2_div {
+    height: 130px;
     flex-shrink: 0;
 }
