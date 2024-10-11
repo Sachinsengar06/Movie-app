@@ -66,6 +66,8 @@ export interface MovieDetailApiResponse {
     name: string;
   }
 
+
+
 export interface VideoResponseAPI {
   id:number;
   results:videoItem[]
@@ -73,4 +75,18 @@ export interface VideoResponseAPI {
 interface videoItem {
   key:string;
   type:string;
+}
+
+export interface Genres {
+  genres:Genre[]
+}
+
+export interface SearchResult{
+  page:number;
+  results:SearchItem[]
+}
+interface SearchItem{
+  id:number;
+  title:string;
+  poster_path:string;
 }

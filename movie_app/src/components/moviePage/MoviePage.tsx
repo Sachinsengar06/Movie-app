@@ -2,17 +2,18 @@ import MovieCard from '../movie_card/MovieCard';
 import useFetchData from '../../hooks/useFetchData';
 import styles from './MoivePage.module.css';
 import { MovieApiResponse } from '../../types/tbdmApi';
+import { baseImgUrl } from '../../config/apiConfig';
 
 
 
 interface MoviePageProps {
-  newApi: string;
+  API: string;
 }
 
-const baseImgUrl = 'https://image.tmdb.org/t/p/w500';
+const MoviePage = ({ API }: MoviePageProps) => {
+  console.log("i am movie page")
 
-const MoviePage = ({ newApi }: MoviePageProps) => {
-  const { data, loading } = useFetchData<MovieApiResponse>(newApi);
+  const { data, loading } = useFetchData<MovieApiResponse>(API,'MoviePage');
   return (
     <div className={styles.home_grid}>
       {loading

@@ -16,8 +16,8 @@ const Login = () => {
       <div className={styles.login_form}>
         <h1>Sign In</h1>
         <div className={styles.content}>
-          <input type="text" placeholder="Your Email" />
-          <input type="password" placeholder="password" />
+          <input name="input" type="text" placeholder="Your Email" />
+          <input name="password" type="password" placeholder="password" />
           <button className={styles.btn}>Sign In</button>
           <p className={styles.forgotPass}>Forgot password?</p>
         </div>

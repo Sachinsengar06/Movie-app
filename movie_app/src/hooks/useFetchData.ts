@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
-const useFetchData = <T>(API: string) => {
+
+const useFetchData = <T>(API: string, type:string) => {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true); // Loading state
-
+  console.log('i am hook', type)
   useEffect(() => {
     const getData = async () => {
       setLoading(true); // Set loading to true when starting the fetch
@@ -16,9 +17,9 @@ const useFetchData = <T>(API: string) => {
           }
         });
         const result:T = await response.json();
-        // console.log('hi i am loading',loading)
+        console.log('hi i am loading',loading)
         setData(result); // Set the fetched data
-        console.log('loading moive page', loading)
+
 
       } catch (error) {
         console.log('An error occurred while fetching data:', error);

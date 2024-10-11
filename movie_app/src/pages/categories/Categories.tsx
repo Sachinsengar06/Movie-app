@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import useFetchData from "../../hooks/useFetchData";
 import styles from "./Categories.module.css";
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/ContextProvider';
+import { Genres } from '../../types/tbdmApi';
 
 const Categories = () => {
   const gradientArr = [
@@ -24,7 +25,7 @@ const Categories = () => {
   ];
 
   const API = "https://api.themoviedb.org/3/genre/movie/list?language=en";
-  const { data: movieMenu, loading } = useFetchData(API);
+  const { data: movieMenu, loading } = useFetchData<Genres>(API);
   const genres = movieMenu?.genres || [];
   const navigate = useNavigate();
   const {handleSetValue} = useContext(AppContext);

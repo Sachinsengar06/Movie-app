@@ -5,14 +5,14 @@ import styles from "./Video.module.css";
 import { baseUrl } from "../../config/apiConfig";
 import { VideoResponseAPI } from "../../types/tbdmApi";
 const Video = () => {
-
+  console.log('i am video page')
   const defaultVideoId = 1352821;
   const { movieId } = useParams();
   const videoRef = useRef<HTMLIFrameElement | null>(null); // Create a ref for the iframe
   const [isPlaying, setIsPlaying] = useState(true); // State to track if the video should play
   const API = `${baseUrl}/movie/${movieId || defaultVideoId}/videos?language=en-US`;
-  const { data } = useFetchData<VideoResponseAPI>(API);
-  const teaserVideo = data?.results?.find((video: { type: string }) => video.type === "Trailer");
+  const { data } = useFetchData<VideoResponseAPI>(API,'video');
+  const teaserVideo = data?.results?.find((video) => video.type === "Trailer");
   const videoKey = teaserVideo?.key;
 
   const observerOptions = {
